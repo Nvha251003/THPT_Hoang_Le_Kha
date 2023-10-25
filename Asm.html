@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 1250px;
+            height: 1540px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px gray;
+            position: relative;
+        }
+        header {
+            width: 1250px;
+            height: 190px;
+            background-image: url('iASM/Screenshot\ 2022-05-31\ 214700.png');
+        }
+        .slogen {
+            padding: 10px;
+            margin-left: 210px;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            color:red;
+        }
+        .hmenu {
+            height: 40px;
+            list-style: none;
+            background-color:rgb(72, 161, 239);
+        }
+        .hmenu>li {
+            display: inline-block;
+        }
+        .hmenu>li>a {
+            display: block;
+            text-decoration: none;
+            line-height: 40px;
+            font-variant: small-caps;
+            color: white;
+            font-size: 19px;
+            padding: 0 10px;
+            border-right: 1px solid white;
+        }
+        .hmenu>li>a:hover {
+            color: yellow;
+            text-decoration: underline;
+            font-size: larger;
+            font-weight: bold;
+        }
+        .hmenu>.login:hover form {
+            display: block;
+        }
+        .login {
+            position: relative;
+        }
+        form {
+            position: absolute;
+            display: none;
+            width: 270px;
+            height: 150px;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid rgb(117, 115, 115);
+            top: -172px;
+            right: -88px;
+            font-size: 15px;
+            background-color: aqua;
+            font-variant: normal;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: normal;
+            line-height: 7px;
+        }
+        .form-group {
+            margin-bottom: 5px;
+        }
+        form>h3 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+        .input {
+            background-color: rgb(72, 161, 239);
+            border: 1px solid white;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+            font-family: "Roboto Mono",monospace;
+            margin-left: 3px;
+            padding: 3px;
+        }
+        .nav-2 {
+            height: 40px;
+            margin-bottom: 5px;
+            background-color: rgb(243, 235, 226);
+        }
+        marquee {
+            width: 70%;
+            line-height: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+        }
+        .aside1 {
+            width: 18%;
+            height: 1140px;
+            float: left;
+            position: relative;
+        }
+        .vmenu {
+            margin-left: 5px;
+            margin-right: 5px;
+            list-style-type: none;
+            background-color: rgb(72, 161, 239);
+        }
+        .vmenu>li {
+            height: 45px;
+            border: 1px solid white;
+            position: relative;
+        }
+        .vmenu>li>a {
+            line-height: 45px;
+            color: white;
+            font-variant: small-caps;
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .vmenu>li>a:hover {
+            color: yellow;
+        }
+        .vmenu>li:hover>.sub-menu {
+            display: block;
+        }
+        .sub-menu {
+            border-radius: 3px;
+            box-shadow: 0 0 3px gray;
+            list-style: none;
+            width: 180px;
+            display: none;
+            position: absolute;
+            left: 214px;
+            top: 0px;
+            z-index: 1;
+        }
+        .sub-menu>li>a {
+            display: block;
+            line-height: 45px;
+            text-decoration: none;
+            border-bottom: 1px solid rgb(170, 200, 212);
+            background-color: rgb(54, 152, 238);
+            color: white;
+            padding-left: 10px;
+            font-size: 18px;
+        }
+        .sub-menu>li>a:hover {
+            color: yellow;
+        }
+        .tinmoi {
+            height: 50px;
+            width: 212px;
+            margin-left: 7px;
+            margin-top: 10px;
+            background-color: #056ECA;
+            color: yellow;
+            font-variant: small-caps;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+        }
+        .new {
+            margin: 20px 10px;
+        }
+        .new>a {
+            text-decoration: none;
+            font-family: tahoma;
+            color: #056ECA;
+            font-size: 11pt;
+        }
+        .new>a>:hover {
+            text-decoration: underline;
+        }
+        .new>a>img {
+            width: 40px;
+            margin-right: 10px;
+            float: left;
+        }
+        article {
+            height: 1140px;
+            width: 63%;
+            border: 1px solid rgb(141, 212, 236);
+            float: left;
+            margin: 0 5px;
+            position: relative;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+        .aside2 {
+            width: 17%;
+            height: 1140px;
+            float: right;
+            margin-right: 5px;
+        }
+        .aside2>div>img {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        footer {
+            height: 110px;
+            width: 100%;
+            clear: both;
+            position: absolute;
+            bottom: 0;
+            background-color: rgb(54, 152, 238);
+            padding-top: 7px;
+        }
+        .end {
+            position: absolute;
+            left: 10px;
+            font-size: 20px;
+            color: white;
+            line-height: 25px;
+        }
+        span {
+            font-size: 21px;
+            font-weight: bold;
+        }
+        .map>img {
+            position: absolute;
+            left: 493px;
+            bottom: 44px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="slogen">"Việc học giống như thuyền đi ngược nước, không tiến lên ắt phải lùi"</p>
+        </header>
+        <nav class="nav-1">
+            <ul class="hmenu">
+                <li><a href="trangchu.html" target="name">Trang chủ</a></li>
+                <li><a href="bantindoc.html" target="name">Giới thiệu</a></li>
+                <li><a href="#">Thời khóa biểu</a></li>
+                <li><a href="#">vnEdu</a></li>
+                <li><a href="#">Cổng học liệu & thi trực tuyến</a></li>
+                <li><a href="#">Tra cứu điểm thi</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li class="login">
+                    <a href="#">Đăng nhập
+                        <form action="">
+                            <h3>ĐĂNG NHẬP TÀI KHOẢN</h3>
+                            <div class="form-group">
+                                <label for="user">Tài khoản:</label>
+                                <input type="text" size="20" style="padding: 3px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="pass">Mật khẩu:</label>
+                                <input type="password" size="15" style="padding: 3px;">
+                            </div>
+                            <input style="margin-top: 5px;" type="checkbox" name="" id="">Nhớ mật khẩu
+                            <br>
+                            <button style="padding: 3px; font-size: 14px;;" >Đăng nhập</button>
+                            <button style="padding: 3px; font-size: 14px;margin-left: 5px;">Đăng kí</button>
+                        </form>
+                    </a>
+                </li>
+                <li>
+                    <input class="input" type="date">
+                </li>
+            </ul>
+        </nav>
+        <nav class="nav-2">
+            <p align="center">
+                <marquee onmouseover="this.stop()" onmouseout="this.start()">
+                    HƯỚNG TỚI KỈ NIỆM 42 NĂM THÀNH LẬP TRƯỜNG THPT HOÀNG LỆ KHA (1981 - 2022)
+                </marquee>
+            </p>
+        </nav>
+        <aside class="aside1">
+            <ul class="vmenu">
+                <li><a href="gioithieu.html" target="name">Giới thiệu</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Giới thiệu nhà trường</a></li>
+                        <li><a href="#">Lịch sử hình thành</a></li>
+                        <li><a href="#">Cơ cấu tổ chức</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tin tức - Sự kiện</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Tấm gương học đường</a></li>
+                        <li><a href="tinhocduong.html" target="name">Tin học đường</a></li>
+                        <li><a href="tingiaoduc.html" target="name">Tin giáo dục</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tổ chuyên môn</a></li>
+                <li><a href="#">Văn bản học tập</a></li>
+                <li><a href="#">Góc học tập</a></li>
+                <li><a href="#">Cựu giáo chức</a></li>
+                <li><a href="#">Cựu học sinh</a></li>
+                <li><a href="#">Thi đua khen thưởng</a></li>
+                <li><a href="#">Những điều cần biết</a></li>
+                <li><a href="#">Đảng bộ</a></li>
+                <li><a href="#">Công đoàn</a></li>
+                <li><a href="#">Đoàn thanh niên</a></li>
+                <li><a href="#">Tuyển sinh</a></li>
+            </ul>
+            <div class="tinmoi">Tin mới</div>
+            <div class="new">
+                <a href="#">
+                    <img src="iASM/636569101.jpg" alt="">
+                    <p>THÔNG BÁO TUYỂN SINH LỚP 10 THPT HOÀNG LỆ KHA NĂM HỌC 2022 - 2023</p>
+                </a>
+            </div>
+            <div class="new">
+                <a href="#">
+                    <img src="iASM/636417294.jpg" alt="">
+                    <p>LỄ KHỞI CÔNG XÂY DỰNG TRƯỜNG THPT HOÀNG LỆ KHA</p>
+                </a>
+            </div>
+            <div class="new">
+                <a href="#">
+                    <img src="iASM/636412537.jpg" alt="">
+                    <p>CỰU HỌC SINH TRỞ VỀ TRƯỜNG XƯA</p>
+                </a>
+            </div>
+            <div class="new">
+                <a href="#">
+                    <img src="iASM/636412529.jpg" alt="">
+                    <p>THANH XUÂN HÁT MÃI TRONG TIM</p>
+                </a>
+            </div>
+            <div class="new">
+                <a href="#">
+                    <img src="iASM/636411819.jpg" alt="">
+                    <p>HỘI KHUYẾN HOC TRƯỜNG THPT HOÀNG LỆ KHA VỚI CÔNG TÁC KHUYẾN HỌC, KHUYẾN TÀI</p>
+                </a>
+            </div>
+            <div class="new">
+                <a href="#">
+                    <img src="iASM/636411505.jpg" alt="">
+                    <p>ĐẢNG BỘ TRƯỜNG THPT HOÀNG LỆ KHA - 40 NĂM XÂY DỰNG VÀ PHÁT TRIỂN VỮNG MẠNH</p>
+                </a>
+            </div>
+        </aside>
+        <article>
+            <iframe src="trangchu.html" name="name" scrolling="auto" frameborder="0"></iframe>
+        </article>
+        <aside class="aside2">
+            <div>
+                <img src="iASM/Screenshot 2022-06-01 233020.png" alt="">
+                <img src="iASM/Screenshot 2022-06-01 233126.png" alt="">
+                <img src="iASM/Screenshot 2022-06-01 233813.png" alt="">
+                <img src="iASM/Screenshot 2022-06-01 234353.png" alt="">
+                <img src="iASM/Screenshot 2022-06-01 233147.png" alt="">
+                <img src="iASM/Screenshot 2022-06-01 234441.png" alt="">
+                <img src="iASM/Screenshot 2022-06-01 233210.png" alt="">
+            </div>
+            
+        </aside>
+        <footer>
+            <div class="end">
+                <span>BẢN QUYỀN SỬ DỤNG THUỘC TRƯỜNG THPT HOÀNG LỆ KHA</span><br>
+                <span>ĐC:</span> Thị trấn Hà Trung - Huyện Hà Trung - Tỉnh Thanh Hóa<br>
+                <span>ĐT:</span> 02372. - <span>Fax:</span> 02373. - <span>Email:</span> thpt.hoanglekha@thanhhoa.edu.vn <br>
+                <span>FANPAGE:</span> THPT Hoàng Lệ Kha-Hà Trung-Thanh Hóa
+                <div class="map">
+                    <img src="iASM/vitri.jpg" width="34px" usemap="#ggmap" alt="">
+                    <map name="ggmap">
+                        <area shape="rect" coords="0,0,35,35" href="https://goo.gl/maps/LFgGJP7CsiXXzJk39" alt="">
+                    </map>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
